@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Sign Up Page</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="icon" href="images/favicon.png" type="image/png"
+	sizes="16x16">
+</head>
+<header>
+	<h1>Player CRUD</h1>
+</header>
+<body>
+	<ul class="topnav">
+		<li><a href="index.html">Home</a></li>
+		<li><a class="active" href="signup.html">Sign Up</a></li>
+		<li><a href="view.html">View All</a></li>
+		<li><a href="search.html">Search</a></li>
+		<li><a href="update.html">Update</a></li>
+		<li><a href="delete.html">Delete</a></li>
+		<li class="right"><a href="about.html">About</a></li>
+	</ul>
+	<br>
+	<form id="form1" action="javascript:alert('Signed up successfully')"
+		onsubmit="return isValidPlayerSignUp()">
+		<h2>Player Sign Up</h2>
+		First Name: <br> <input type="text" id="name"><br> <br>
+		Date of Birth: <br> <input type="date" id="dob"><br>
+		<br> Gender: <br> <select id="gender">
+			<option></option>
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+		</select><br> <br> Contact Number: <br> <input type="text"
+			id="contact"><br> <br> Team: <br> <input
+			type="text" id="team"><br> <br> Email (Username): <br>
+		<input type="text" id="email"><br> <br> Password: <br>
+		<input type="password" id="password"><br> <br>
+		Reenter Password: <br> <input type="password" id="password2"><br>
+		<br>
+		<div class="submit">
+			<input type="submit">&nbsp;&nbsp;&nbsp;&nbsp;<input
+				type="reset" value="Cancel " onclick="clearErr()" /><br> <br>
+			<span id="errMsg" style="color: red;"></span>
+		</div>
+	</form>
+	<form id="form2"
+		action="javascript:alert('Team signed up successfully')"
+		onsubmit="return isValidTeamSignUp()">
+		<h2>Team Sign Up</h2>
+		Team Name: <br> <input type="text" id="teamname"><br>
+		<br> Coach Name: <br> <input type="text" id="coachname"><br>
+		<br>
+		<div class="submit">
+			<input type="submit">&nbsp;&nbsp;&nbsp;&nbsp;<input
+				type="reset" value="Cancel " onclick="clearErr2()" /><br> <br>
+			<span id="errMsg2" style="color: red;"></span>
+		</div>
+	</form>
+	<script type="text/javascript" src="scripts/validate.js"></script>
+</body>
+<footer>
+	<br> <br> <br> <br> <br> <br> <br> <br>
+	<br> <br> <br> <br> <br> <br> <br> <br>
+	<br> <br> <br> <br> <br> <br> <br>
+	Copyright © 2019 Honda Huang
+</footer>
+</html>
