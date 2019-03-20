@@ -89,13 +89,9 @@ ul.topnav li.right {
 	float: right;
 }
 
-#form1 {
-	margin-left: 300px;
-}
-
-#form2 {
-	margin-top: -500px;
-	margin-right: 300px;
+.signup {
+	display: flex;
+	flex-direction: row;
 }
 
 header {

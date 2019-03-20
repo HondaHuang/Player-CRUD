@@ -5,7 +5,7 @@ function isValidUserCredentials() {
 	var password = document.getElementById("password").value;
 	var b = false;
 	if (email == "" || password == "") {
-		message = "Email and Password is required";
+		message = "Email and Password must be filled";
 	} else {
 		message = "";
 		b = true;
@@ -181,8 +181,7 @@ var option = document.getElementById("option"), search = document
 
 option.onchange = function() {
 	searchChange();
-	message = "";
-	document.getElementById("errMsg").innerText = message;
+	document.getElementById("errMsg").innerText = "";
 }
 
 function searchChange() {
