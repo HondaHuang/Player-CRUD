@@ -21,26 +21,32 @@
 		<li class="right"><a href="about.html">About</a></li>
 	</ul>
 	<br>
-	<form>
+	<form action="javascript:alert('Player searched')"
+		onsubmit="return isPlayerSearchValid()">
 		<h2>Player Search</h2>
-		ID: <br> <input type="text" name="id"> <br> <br>
-		Name: <br> <input type="text" name="name"><br> <br>
-		Email: <br> <input type="text" name="email"> <br> <br>
-		DOB: <br> <input type="date" name="dob"> <br> <br>
-		Contact: <br> <input type="text" name="contact"> <br>
-		<br> Gender: <br> <select>
-			<option></option>
-			<option value="male">Male</option>
-			<option value="female">Female</option>
-		</select> <br> <br> Team Name: <br> <input type="text"
-			name="teamname"> <br> <br>
+		<select id="option" onchange="searchChange()">
+			<option value=1>Search by ID</option>
+			<option value=2>Search by Name</option>
+			<option value=3>Search by Email</option>
+			<option value=4>Search by Date of Birth</option>
+			<option value=5>Search by Contact</option>
+			<option value=6>Search by Gender</option>
+			<option value=7>Search by Team</option>
+		</select> <br>
+		<br>
+		<div id="search">
+			<label for="id">ID: </label><br> <input type="text" id="id">
+		</div>
+		<br>
 		<div class="submit">
-			<button type="submit">Search</button>
+			<input type="submit" value="Search">&nbsp;&nbsp;&nbsp;&nbsp;<input
+				type="reset" value="Cancel " onclick="clearErr()" /><br> <br>
+			<span id="errMsg" style="color: red;"></span>
 		</div>
 	</form>
+	<script type="text/javascript" src="scripts/validate.js"></script>
 </body>
 <footer>
-<br>
-Copyright © 2019 Honda Huang
+	<br> Copyright © 2019 Honda Huang
 </footer>
 </html>

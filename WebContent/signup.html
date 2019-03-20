@@ -24,19 +24,26 @@
 	<form id="form1" action="javascript:alert('Signed up successfully')"
 		onsubmit="return isValidPlayerSignUp()">
 		<h2>Player Sign Up</h2>
-		First Name: <br> <input type="text" id="name"><br> <br>
-		Date of Birth: <br> <input type="date" id="dob"><br>
-		<br> Gender: <br> <select id="gender">
+		<label for="name">First Name: </label><br> <input type="text"
+			id="name" placeholder="3-20 letters"><br> <br> <label
+			for="dob">Date of Birth:</label> <br> <input type="date"
+			id="dob"><br> <br> <label for="gender">Gender:
+		</label><br> <select id="gender">
 			<option></option>
 			<option value="male">Male</option>
 			<option value="female">Female</option>
-		</select><br> <br> Contact Number: <br> <input type="text"
-			id="contact"><br> <br> Team: <br> <input
-			type="text" id="team"><br> <br> Email (Username): <br>
-		<input type="text" id="email"><br> <br> Password: <br>
-		<input type="password" id="password"><br> <br>
-		Reenter Password: <br> <input type="password" id="password2"><br>
-		<br>
+		</select><br> <br> <label for="contact">Contact Number: </label><br>
+		<input type="text" id="contact" placeholder="10 digit number"><br>
+		<br> <label for="team">Team: </label><br> <select id="team">
+			<option></option>
+			<option value="India">India</option>
+		</select><br> <br> <label for="email">Email (Username): </label><br>
+		<input type="text" id="email" placeholder="example@ex.com"><br>
+		<br> <label for="password">Password: </label><br> <input
+			type="password" id="password"
+			placeholder="6-20 digits or numbers only"><br> <br>
+		<label for="password2">Reenter Password: </label><br> <input
+			type="password" id="password2"><br> <br>
 		<div class="submit">
 			<input type="submit">&nbsp;&nbsp;&nbsp;&nbsp;<input
 				type="reset" value="Cancel " onclick="clearErr()" /><br> <br>
@@ -47,9 +54,9 @@
 		action="javascript:alert('Team signed up successfully')"
 		onsubmit="return isValidTeamSignUp()">
 		<h2>Team Sign Up</h2>
-		Team Name: <br> <input type="text" id="teamname"><br>
-		<br> Coach Name: <br> <input type="text" id="coachname"><br>
-		<br>
+		<label for="teamname">Team Name: </label><br> <input type="text"
+			id="teamname"><br> <br> <label for="coachname">Coach
+			Name: </label><br> <input type="text" id="coachname"><br> <br>
 		<div class="submit">
 			<input type="submit">&nbsp;&nbsp;&nbsp;&nbsp;<input
 				type="reset" value="Cancel " onclick="clearErr2()" /><br> <br>

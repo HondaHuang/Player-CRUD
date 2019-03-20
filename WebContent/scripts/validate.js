@@ -32,7 +32,7 @@ function isValidEmail(email) {
 
 function isValidPassword(password) {
 	var b1 = false;
-	if (password.match(/^[a-zA-Z0-9@.]{5,8}$/)) {
+	if (password.match(/^[a-zA-Z0-9]{6,20}$/)) {
 		b1 = true;
 	} else {
 		message = "Invalid Password";
@@ -77,9 +77,9 @@ function isValidPlayerSignUp() {
 	if (b == true) {
 		b = isValidContact(contact);
 	}
-	if (b == true) {
-		b = isValidTeam(team);
-	}
+	/*
+	 * if (b == true) { b = isValidTeam(team); }
+	 */
 	if (b == true) {
 		b = isValidEmail(email);
 	}
@@ -124,22 +124,18 @@ function isValidContact(contact) {
 	return b1;
 }
 
-function isValidTeam(team) {
-	var b1 = false;
-	if (team.match(/^[a-zA-Z]{3,15}$/)) {
-		b1 = true;
-	} else {
-		message = "Invalid Team";
-	}
-	return b1;
-}
+/*
+ * function isValidTeam(team) { var b1 = false; if
+ * (team.match(/^[a-zA-Z]{3,15}$/)) { b1 = true; } else { message = "Invalid
+ * Team"; } return b1; }
+ */
 
 function isValidPassword2(password2, password) {
 	var b1 = false;
 	if (password2 == password) {
 		b1 = true;
 	} else {
-		message = "Passwords must be same";
+		message = "Passwords must be the same";
 	}
 	return b1;
 }
@@ -182,4 +178,37 @@ function isValidCoachname(coachname) {
 		message = "Invalid Coach Name";
 	}
 	return b1;
+}
+
+var option = document.getElementById("option"), search = document
+		.getElementById("search");
+
+option.onchange = function() {
+	searchChange()
+}
+
+function searchChange() {
+	switch (parseInt(option.value)) {
+	case 1:
+		search.innerHTML = "<label for='id'>ID: </label><br> <input type='text' id='id'>";
+		break;
+	case 2:
+		search.innerHTML = "<label for='name'>Name: </label><br> <input type='text' id='name'>";
+		break;
+	case 3:
+		search.innerHTML = "<label for='email'>Email: </label><br> <input type='text' id='email'>"
+		break;
+	case 4:
+		search.innerHTML = "<label for='dob'>DOB: </label><br> <input type='date' id='dob'>";
+		break;
+	case 5:
+		search.innerHTML = "<label for='contact'>Contact: </label><br> <input type='text' id='contact'>";
+		break;
+	case 6:
+		search.innerHTML = "<label for='gender'>Gender: </label><br> <select id='gender'><option></option><option value='male'>Male</option><option value='female'>Female</option></select>"
+		break;
+	case 7:
+		search.innerHTML = "<label for='team'>Team: </label><br> <select id='team'><option></option><option value='India'>India</option></select>"
+		break;
+	}
 }
