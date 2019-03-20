@@ -21,18 +21,21 @@
 		<li class="right"><a href="about.html">About</a></li>
 	</ul>
 	<br>
-	<form>
+	<form action="javascript:alert('Player updated successfully')"
+		onsubmit="return isPlayerUpdateValid()">
 		<h2>Update Contact</h2>
-		ID: <br> <input type="text" name="id"><br> <br>
-		New Contact: <br> <input type="text" name="contact"><br>
-		<br>
+		<label for="id">ID: </label><br> <input type="text" id="id"><br>
+		<br> <label for="contact">New Contact Number: </label><br> <input
+			type="text" id="contact"><br> <br>
 		<div class="submit">
-			<button type="submit">Update</button>
+			<input type="submit" value="Update"> &nbsp;&nbsp;&nbsp;&nbsp;<input
+				type="reset" value="Cancel " onclick="clearErr()" /><br> <br>
+			<span id="errMsg" style="color: red;"></span>
 		</div>
 	</form>
+	<script type="text/javascript" src="scripts/validate.js"></script>
 </body>
 <footer>
-<br>
-Copyright © 2019 Honda Huang
+	<br> Copyright © 2019 Honda Huang
 </footer>
 </html>

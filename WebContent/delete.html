@@ -21,16 +21,19 @@
 		<li class="right"><a href="about.html">About</a></li>
 	</ul>
 	<br>
-	<form>
+	<form action="javascript:alert('Player deleted successfully')"
+		onsubmit="return isPlayerDeleteValid()">
 		<h2>Delete Account</h2>
-		ID: <br> <input type="text" name="id"><br> <br>
+		<label for="id">Player ID: </label><br> <input type="text"
+			id="id"><br> <br>
 		<div class="submit">
-			<button type="submit">Delete</button>
+			<input type="submit" value="Delete"><br> <br> <span
+				id="errMsg" style="color: red;"></span>
 		</div>
 	</form>
+	<script type="text/javascript" src="scripts/validate.js"></script>
 </body>
 <footer>
-<br>
-Copyright © 2019 Honda Huang
+	<br> Copyright © 2019 Honda Huang
 </footer>
 </html>

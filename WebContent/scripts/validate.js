@@ -104,14 +104,11 @@ function isValidName(name) {
 }
 
 /*
- * function isValidDob(dob) { var b1 = false; if
- * (dob.match(/^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/)) { b1 = true; } else { message =
- * "Invalid Date"; } return b1; }
- */
-
-/*
- * function isValidGender(gender) { var b1 = false; if (gender != "") { b1 =
- * true; } else { message = "Invalid Gender"; } return b1; }
+ * function isValidDob(dob) { if (dob != "") { return true; } else { message =
+ * "Date cannot be empty"; } return false; }
+ * 
+ * function isValidGender(gender) { if (gender != "") { return true; } else {
+ * message = "Must pick a gender"; } return false; }
  */
 
 function isValidContact(contact) {
@@ -125,9 +122,8 @@ function isValidContact(contact) {
 }
 
 /*
- * function isValidTeam(team) { var b1 = false; if
- * (team.match(/^[a-zA-Z]{3,15}$/)) { b1 = true; } else { message = "Invalid
- * Team"; } return b1; }
+ * function isValidTeam(team) { if (team != "") { return true; } else { message =
+ * "Invalid Team"; } return false; }
  */
 
 function isValidPassword2(password2, password) {
@@ -184,7 +180,9 @@ var option = document.getElementById("option"), search = document
 		.getElementById("search");
 
 option.onchange = function() {
-	searchChange()
+	searchChange();
+	message = "";
+	document.getElementById("errMsg").innerText = message;
 }
 
 function searchChange() {
@@ -211,4 +209,106 @@ function searchChange() {
 		search.innerHTML = "<label for='team'>Team: </label><br> <select id='team'><option></option><option value='India'>India</option></select>"
 		break;
 	}
+}
+
+function isPlayerSearchValid() {
+	if (option.value == 1) {
+		var id = document.getElementById("id").value;
+	}
+	if (option.value == 2) {
+		var name = document.getElementById("name").value;
+	}
+	if (option.value == 3) {
+		var email = document.getElementById("email").value;
+	}
+	if (option.value == 4) {
+		var dob = document.getElementById("dob").value;
+	}
+	if (option.value == 5) {
+		var contact = document.getElementById("contact").value;
+	}
+	if (option.value == 6) {
+		var gender = document.getElementById("gender").value;
+	}
+	if (option.value == 7) {
+		var team = document.getElementById("team").value;
+	}
+	var b = false;
+	if ((id == "" && option.value == 1) || (name == "" && option.value == 2)
+			|| (email == "" && option.value == 3)
+			|| (dob == "" && option.value == 4)
+			|| (contact == "" && option.value == 4)
+			|| (gender == "" && option.value == 6)
+			|| (team == "" && option.value == 7)) {
+		message = "Field cannot be empty";
+	} else {
+		message = "";
+		b = true;
+	}
+	if (b == true && option.value == 1) {
+		b = isValidPlayerId(id);
+	}
+	if (b == true && option.value == 2) {
+		b = isValidName(name);
+	}
+	if (b == true && option.value == 3) {
+		b = isValidEmail(email);
+	}
+	/*
+	 * if (b == true && option.value == 4) { b = isValidDob(dob); }
+	 */
+	if (b == true && option.value == 5) {
+		b = isValidContact(contact);
+	}
+	/*
+	 * if (b == true && option.value == 6) { b = isValidGender(gender); } if (b ==
+	 * true && option.value == 7) { b = isValidTeam(team); }
+	 */
+	document.getElementById("errMsg").innerText = message;
+	return b;
+}
+
+function isValidPlayerId(id) {
+	if (id.match(/^[Pp]{1}[a-zA-Z]{2}[0-9]{7}$/)) {
+		return true;
+	} else {
+		message = "Invalid Player ID";
+	}
+	return false;
+}
+
+function isPlayerUpdateValid() {
+	var id = document.getElementById("id").value;
+	var contact = document.getElementById("contact").value;
+	var b = false;
+	if (id == "" || contact == "") {
+		message = "ID and Contact Number required";
+	} else {
+		message = "";
+		b = true;
+	}
+	if (b == true) {
+		b = isValidPlayerId(id);
+	}
+	if (b == true) {
+		b = isValidContact(contact);
+	}
+	document.getElementById("errMsg").innerText = message;
+	return b;
+}
+
+function isPlayerDeleteValid() {
+	var id = document.getElementById("id").value;
+	var b = false;
+	if (id == "") {
+		message = "Must enter Player ID";
+	} else {
+		message = "";
+		b = true;
+	}
+	if (b == true) {
+		b = isValidPlayerId(id);
+	}
+	document.getElementById("errMsg").innerText = message;
+	return b;
 }

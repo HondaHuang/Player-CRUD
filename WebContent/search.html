@@ -21,7 +21,7 @@
 		<li class="right"><a href="about.html">About</a></li>
 	</ul>
 	<br>
-	<form action="javascript:alert('Player searched')"
+	<form action="javascript:alert('Player searched successfully')"
 		onsubmit="return isPlayerSearchValid()">
 		<h2>Player Search</h2>
 		<select id="option" onchange="searchChange()">
@@ -32,16 +32,14 @@
 			<option value=5>Search by Contact</option>
 			<option value=6>Search by Gender</option>
 			<option value=7>Search by Team</option>
-		</select> <br>
-		<br>
+		</select> <br> <br>
 		<div id="search">
 			<label for="id">ID: </label><br> <input type="text" id="id">
 		</div>
 		<br>
 		<div class="submit">
-			<input type="submit" value="Search">&nbsp;&nbsp;&nbsp;&nbsp;<input
-				type="reset" value="Cancel " onclick="clearErr()" /><br> <br>
-			<span id="errMsg" style="color: red;"></span>
+			<input type="submit" value="Search"><br> <br> <span
+				id="errMsg" style="color: red;"></span>
 		</div>
 	</form>
 	<script type="text/javascript" src="scripts/validate.js"></script>
